@@ -17,7 +17,7 @@ class Input extends Facade {
      */
     public static function get($key = null, $default = null)
     {
-        return static::$app['Witooh/LaravelInput/Input']->input($key, $default);
+        return static::$app['Witooh\LaravelInput\Input']->input($key, $default);
     }
 
     /**
@@ -25,4 +25,4 @@ class Input extends Facade {
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'Witooh/LaravelInput/Input'; }}
+    protected static function getFacadeAccessor() { return 'Witooh\LaravelInput\Input'; }}

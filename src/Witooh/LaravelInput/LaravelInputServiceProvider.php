@@ -18,7 +18,7 @@ class LaravelInputServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->singleton('Witooh/LaravelInput/Input', 'Witooh/LaravelInput/Input');
+		$this->app->singleton('Witooh\LaravelInput\Input', 'Witooh\LaravelInput\Input');
 	}
 
 	/**
