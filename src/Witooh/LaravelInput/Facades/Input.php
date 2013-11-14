@@ -2,27 +2,13 @@
 
 namespace Witooh\LaravelInput\Facades;
 
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Input as LaravelInput;
 
-class Input extends Facade {
+class Input extends LaravelInput {
 
-    /**
-     * Get an item from the input data.
-     *
-     * This method is used for all request verbs (GET, POST, PUT, and DELETE)
-     *
-     * @param  string $key
-     * @param  mixed  $default
-     * @return mixed
-     */
-    public static function get($key = null, $default = null)
+    public static function toCollection()
     {
-        return static::$app['Witooh\LaravelInput\Input']->input($key, $default);
+        return new Collection(static::$app['request']->all());
     }
-
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
-    protected static function getFacadeAccessor() { return 'Witooh\LaravelInput\Input'; }}
+}
